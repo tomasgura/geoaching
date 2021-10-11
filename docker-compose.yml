@@ -1,0 +1,26 @@
+version: "3.5"
+
+services:
+  app-12:
+    image: node:12-stretch
+    user: "node"
+    hostname: "node12"
+    working_dir: /app
+    volumes:
+      - ./:/app
+
+  app-14:
+    image: node:14-stretch
+    user: "node"
+    hostname: "node14"
+    working_dir: /app
+    volumes:
+      - ./:/app
+
+  app-16:
+    image: node:16-stretch
+    user: "node"
+    hostname: "node16"
+    working_dir: /app
+    volumes:
+      - ./:/app

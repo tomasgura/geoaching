@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+	mili = (a) => a / 1000;
+
+	let uAB = 400; //voltu
+	let r1 = 560 * 1000; // 560k ohm
+	let r2 = 1.2 * 1000000; // 1,2 MOhm
+	let rdout = r2;
+
+	let rAB = r1 + r2;
+	let iAB = uAB / rAB // U = R*I   i=U/R
+	let miAB = mili(iAB);
+	console.log(`Proud AB je ${miAB} mA `);
+
+	let uR1 = iAB*r1;
+	let uR2 = iAB*r2;
+
+	console.log(`Proud R1 = ${uR1} V`);
+	console.log(`Proud R2 = ${uR2} V`);
+
+
+
+</script>
+
+</body>
+</html>

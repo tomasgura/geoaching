@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Cache GCZRTJ</h1>
+<a href="https://www.geocaching.com/seek/cache_details.aspx?wp=GCZRTJ&title=" target="_blank">Keska</a>
+<h2 id="out"></h2>
+
+<xscript src="./dist/bundle.js"></xscript>
+<script src="./dist/bundle-es.js"></script>
+
+<script type="text/javascript">
+	//var cislo = require('cislo');
+	//import {cislo} from "./funkce-out";
+
+	//import{cislo} from ("./funkce-out.js");
+	//const Web3 = import('./funkce-out');
+
+
+	function compute() {
+		// 11 hodnot
+//				debugger
+		// standardni rozchod ABCD 1435
+		let A = 1;
+		let B = 4;
+		let C = 3;
+		let D = 5;
+
+		//Solvayovy lomy 600mm
+		let E = 6;
+		let F = 0;
+
+		// kopec na radosti 673 m
+		let G = 7;
+		let H = 3;
+
+
+		// stoupani 24 stupnu
+		let I = 2;
+		let J = 4;
+
+		// delka 20km
+		let K = 2;
+		let L = 0;
+
+		// rozchod 760 f=0
+		let M = 7;
+		let N = 6;
+
+		// veksl
+		let O = 'veksl'.length;
+
+
+		//let P = (IJ/2)+(10*KL)+EF+GH
+		//let Q = (ABCD)/5+(6*EF)+GH+MN+(27*O)+E+K
+		//console.log(MyLibrary);
+		//const cislo = MyLibrary.cislo;
+        //const cifSoucet = MyLibrary.cifSoucet;
+		const ef = cislo([E, F]);
+		const gh = cislo([G, H]);
+		let P = (cislo([I, J]) / 2) + (10 * cislo([K, L])) + ef + gh;
+
+		const abcd = cislo([A, B, C, D]);
+		const mn = cislo([M, N]);
+		let Q = (abcd) / 5 + (6 * ef) + gh + mn + (27 * O) + E + K;
+
+		if (cifSoucet(P) !== 12) {
+			console.error('Cif soucet pro P nesedi');
+		} else {
+			console.log('Cif soucet pro P ok.');
+		}
+
+		if (cifSoucet(Q) !== 21) {
+			console.error('Cif soucet pro Q nesedi');
+			console.debug(Q);
+			console.debug(abcd);
+			console.debug(mn);
+		} else {
+			console.log('Cif soucet pro Q ok.');
+		}
+
+		document.getElementById('out').innerHTML = `Cislo P = ${P}, cislo Q = ${Q}`;
+	}
+
+	compute();
+
+
+</script>
+
+</body>
+</html>

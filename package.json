@@ -1,28 +1,45 @@
 {
-  "name": "html",
-  "version": "1.0.0",
-  "dependencies": {
-    "uniq": "^1.0.1"
-  },
-  "scripts": {
-    "build": "browserify zkouska.js -o out.js -d -t [ babelify --presets [ @babel/preset-env ] ] ",
-    "test": "jest",
-    "pust": "node zkouska.js",
-    "clean": "rimraf ./out",
-    "compile:babel": "babel src --out-dir out --source-maps",
-    "t": "npm-run-all t:*",
-    "t:12": "docker-compose run --rm app-12 node src/test1.js",
-    "t:14": "docker-compose run --rm app-14 node src/test1.js",
-    "t:16": "docker-compose run --rm app-16 node src/test1.js"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.15.7",
-    "@babel/core": "^7.15.5",
-    "@babel/preset-env": "^7.15.6",
-    "babelify": "^10.0.0",
-    "browserify": "^17.0.0",
-    "jest": "^27.2.4",
-    "npm-run-all": "^4.1.5",
-    "rimraf": "^3.0.2"
-  }
+    "name": "html",
+    "version": "1.0.0",
+    "dependencies": {
+    },
+    "scripts": {
+        "build": "browserify zkouska.js -o out.js -d -t [ babelify --presets [ @babel/preset-env ] ] ",
+        "build:funcs": "browserify -r zaloha/funkce.js -o zaloha/funkce-out.js -d ",
+        "build:tsold": "tsc ./ts/funkce.ts --target es5  --downlevelIteration",
+        "build:ts": "tsc",
+        "build:webpack": "webpack build --progress",
+        "esb": "esbuild ./ts/funkce.ts --bundle --format=cjs --sourcemap --target=chrome58,firefox57,safari11,edge16 --outfile=./dist/bundle-es-cjs.js",
+        "esb:broser": "esbuild ./src/app.ts --bundle --format=iife --sourcemap --target=chrome58,firefox57,safari11,edge16 --outfile=./dist/bundle-es-iife.js",
+        "esb:esm": "esbuild ./src/app.ts --bundle --format=esm --sourcemap --target=chrome58,firefox57,safari11,edge16 --outfile=./dist/bundle-es-esm.js",
+        "test": "jest",
+        "pust": "node zkouska.js",
+        "clean": "rimraf ./out",
+        "compile:babel": "babel src --out-dir out --source-maps",
+        "t": "npm-run-all t:*",
+        "t:12": "docker-compose run --rm app-12 node src/test1.js",
+        "t:14": "docker-compose run --rm app-14 node src/test1.js",
+        "t:16": "docker-compose run --rm app-16 node src/test1.js"
+    },
+    "devDependencies": {
+        "esbuild": "^0.14.20",
+        "ts-jest": "^27.1.3",
+        "ts-loader": "^9.2.6",
+        "ts-node": "^10.4.0",
+        "typescript": "^4.5.5",
+        "uniq": "^1.0.1",
+        "webpack": "^5.68.0",
+        "webpack-dev-server": "^4.7.4",
+        "webpack-cli": "^5.1.4",
+        "@babel/cli": "^7.23.0",
+        "@babel/core": "^7.23.2",
+        "@babel/preset-env": "^7.23.2",
+        "@types/jest": "^27.5.2",
+        "babelify": "^10.0.0",
+        "browserify": "^17.0.0",
+        "esbuild-loader": "^4.0.2",
+        "jest": "^27.5.1",
+        "npm-run-all": "^4.1.5",
+        "rimraf": "^5.0.5"
+    }
 }

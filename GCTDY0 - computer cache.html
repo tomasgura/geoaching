@@ -1,0 +1,68 @@
+<html lang="cs" >
+
+	<meta charset="UTF-8">
+	<head>
+		<title>prejmenovani stanic</title>
+
+		<script src="geocaching.js" type="module"></script>
+
+	</head>
+	<body>
+		<h1>GCTDY0 Přejmenování stanic</h1>
+		<a href="https://www.geocaching.com/geocache/GCTDY0" target="_blank">Link</a><br>
+
+
+		<div id="out">
+		</div>
+		<div id="div2"></div>
+
+		<script type="text/javascript">
+			function compute() {
+				// 11 hodnot
+				let cislaZDernehoStitku = [
+					-3,
+					-1,
+					-3,
+					-8,
+					-5,
+					null,
+					-9,
+					[0,2],
+					null,
+					-1,
+					[0,3],
+					null,
+					+5,
+					5,
+					0,
+					null,
+					0,
+					6,
+					[-3,-8],
+					2,
+					7,
+					4,
+					null,
+					-5,
+					0,
+					1,
+					4,
+					null,
+					2,
+					0,
+					[-3,-8],
+					4,
+					8,
+					7];
+
+					const out = 'N50° 06.274  E14° 20.487';
+					document.getElementById('out').innerHTML = out;
+
+
+			}
+			compute();
+
+
+		</script>
+	</body>
+</html>

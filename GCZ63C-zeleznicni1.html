@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			Zeleznicni #1: vlaky v PID Mystery Cache
+
+			GCZ63C</title>
+		<!--
+		<script src="dist/bundle-es-cjs.js" type="module" ></script>
+				<script src="dist/bundle-es-esm.js" type="module"></script>
+
+		<script nomodule src="dist/bundle-es-esm.js"></script>
+
+		-->
+		<script src="dist/bundle-webpack.js"></script>
+		<script type="text/javascript">
+            //import {ciferace,cifSoucet} from "./dist/bundle-es-esm.js";
+
+		</script>
+	</head>
+	<body>
+		<h1>
+			Zeleznicni #1: vlaky v PID Mystery Cache
+
+			GCZ63C</h1>
+
+		<a href="https://www.geocaching.com/geocache/GCZ63C" target="_blank">Link</a><br>
+
+		Praha Masarykovo nadr.-Praha Klanovice (trat dale smer C.Brod, Kolin), delka useku AB km
+		Praha hl.n.-Praha-Cakovice (trat dale smer Vsetaty, Turnov), delka useku CD km
+		Praha-Holesovice-Praha-Sedlec (trat dale smer Kralupy n./Vlt., Decin)
+		Praha Masarykovo nadr.-Praha-Ruzyne (trat dale smer Kladno, Chomutov)
+		Praha-Smichov sev.n.-Praha-Zlicin ("Prazsky Semmering", trat dale smer Hostivice, Rudna u Prahy), delka useku EF km
+		Praha hl.n.-Praha-Radotin (trat dale smer Beroun, Plzen), delka useku GH km
+		Praha hl.n.-Praha-Reporyje (trat dale smer Rudna u Prahy, Beroun)
+		Praha hl.n.-Praha-Zbraslav (trat dale smer Cercany-"Posazavsky pacifik"), delka useku IJ km
+		Praha hl.n-Praha-Kolovraty (trat dale smer Benesov, C.Budejovice)
+		Praha Masarykovo nadr.-Praha-Horni Pocernice (trat dale smer Nymburk, Kolin), delka useku KL km
+
+		<p>
+			AB - 18 km
+			CD - 19 km
+			EF - 15 km
+			GH - 13km
+			IJ - 18km
+			KL - 15km
+			M-'Praha-Holešovice'
+			N='Praha-Radotín'
+			P=Praha-Kyje
+			Q=Praha-Stodůlky
+		</p>
+
+		<script >
+
+			//debugger;
+            //import {cifSoucet} from "./dist/bundle-es-esm";
+            //const cif = ciferace(2567);
+            //console.debug(cif);
+
+            const A = 1;
+			const B= 8;
+			const AB = 18;
+
+            const C = 1;
+			const D = 9;
+            const CD = 19;
+
+            const E=1;
+            const F=5;
+            const EF=15;
+
+            const G=1;
+            const H=3;
+            const GH=13;
+
+            const I=1;
+            const J=8;
+            const IJ=18;
+
+            const K=1;
+            const L=5;
+            const KL=15;
+
+            const M=`Holešovice`.length; // 10
+            const N=`Radotín`.length; // 7
+            const P=`Kyje`.length; // 4
+            const Q=`Stodůlky`.length; //8
+
+            //debugger
+
+            //const soucet = 1;
+
+            const sirka = `N50°02.${AB+GH+IJ+KL+H-N}${Q-P}'`;//+ (AB+GH+IJ+KL+H-N)(Q-P);
+            const delka = `E14°23.${[10*(CD+EF+P)+(11*M)+(P/2)]}'`;//+[10*(CD+EF+P)+(11*M)+(P/2)];
+            console.log('sirka '+sirka);
+            console.log('delka '+delka);
+            console.log(`${sirka} ${delka}`);
+            const soucet = A+B+C+D+E+F+G+H+I+J+K+L+M+N+P+Q;
+            const soucet2 = AB+CD+EF+GH+IJ+KL+M+N+P;
+
+            console.log(`cif soucet ${soucet}`);
+            console.log(`cif soucet2 ${soucet2}`);
+
+			//const cs = cifSoucet(A+B+C+D+E+F+G+H+I+J+K+L+M+N+P+Q);
+			//debugger
+
+
+
+		</script>
+	</body>
+</html>

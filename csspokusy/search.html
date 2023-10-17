@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+      .columns {
+          width: 1200px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: row;
+      }
+      .columns .levy{
+          width: 160px;
+      //12%
+      }
+
+      .columns .stred{
+          width: 85%;
+      // 85%
+      // max 840
+      }
+
+      .columns .pravy{
+          width: 310px;
+      // 310px
+      //margin lev 50px
+      }
+
+  </style>
+</head>
+<body>
+
+<div class="columns">
+    <div class="levy">
+        {if $GOOGLE_PSE['ENABLED'] == "0"}
+        {*if ($sec == "mix" || $sec == "news" || $sec == "local")*}
+        {include file="page/mix/filters.tpl"}
+        {*/if*}
+        {/if}
+
+    </div>
+    <div class="stred">
+        {include file="page/mix/filterResetLinks.tpl"}
+
+        {include file="page/mix/contentNotips.tpl"}
+
+        {include file="scripts/googleLiveAdsense.tpl"}
+
+    </div>
+    <div class="pravy">
+        {include file="scripts/googleAfs.tpl"}
+
+    </div>
+
+
+</div>
+
+</body>
+</html>

@@ -2,28 +2,13 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>
-			Zeleznicni #1: vlaky v PID Mystery Cache
-
-			GCZ63C</title>
-		<!--
-		<script src="dist/bundle-es-cjs.js" type="module" ></script>
-				<script src="dist/bundle-es-esm.js" type="module"></script>
-
-		<script nomodule src="dist/bundle-es-esm.js"></script>
-
-		-->
+		<title>Zeleznicni #1: vlaky v PID Mystery Cache GCZ63C</title>
 		<script src="dist/bundle-webpack.js"></script>
-		<script type="text/javascript">
-            //import {ciferace,cifSoucet} from "./dist/bundle-es-esm.js";
-
-		</script>
 	</head>
 	<body>
 		<h1>
-			Zeleznicni #1: vlaky v PID Mystery Cache
-
-			GCZ63C</h1>
+			Zeleznicni #1: vlaky v PID Mystery Cache GCZ63C
+		</h1>
 
 		<a href="https://www.geocaching.com/geocache/GCZ63C" target="_blank">Link</a><br>
 
@@ -54,9 +39,6 @@
 		<script >
 
 			//debugger;
-            //import {cifSoucet} from "./dist/bundle-es-esm";
-            //const cif = ciferace(2567);
-            //console.debug(cif);
 
             const A = 1;
 			const B= 8;
@@ -96,13 +78,15 @@
             console.log('sirka '+sirka);
             console.log('delka '+delka);
             console.log(`${sirka} ${delka}`);
-            const soucet = A+B+C+D+E+F+G+H+I+J+K+L+M+N+P+Q;
+            const soucetAQ = A+B+C+D+E+F+G+H+I+J+K+L+M+N+P+Q;
+            const soucetAP = A+B+C+D+E+F+G+H+I+J+K+L+M+N+P;
             const soucet2 = AB+CD+EF+GH+IJ+KL+M+N+P;
 
-            console.log(`cif soucet ${soucet}`);
-            console.log(`cif soucet2 ${soucet2}`);
+            console.log(`soucet A..Q ${soucetAQ}`);
+            console.log(`soucet A..P ${soucetAP}`);
 
-			//const cs = cifSoucet(A+B+C+D+E+F+G+H+I+J+K+L+M+N+P+Q);
+			const cs = MyLibrary.cifSoucet(A+B+C+D+E+F+G+H+I+J+K+L+M+N+P+Q);
+            console.log(`cifSoucet ${cs}`);
 			//debugger
 
 

@@ -36,6 +36,16 @@
 			Q=Praha-Stodůlky
 		</p>
 
+		<div id="sirka"></div>
+		<div id="delka"></div>
+		<div id="check"></div>
+		<div> Hint: metr a pul pod cestou, koreny brizy, pod kameny, travou, listim </div>
+		<div> Cil N 50°02.604' E 14°23.470' </div>
+		<a href="https://mapy.cz/zakladni?q=N%2050%C2%B002.604%27%20E%2014%C2%B023.470%27&source=coor&id=14.391166666666667%2C50.0434&ds=1&x=14.3915261&y=50.0431123&z=18" target="_blank">mapa</a>
+		<div>Jsou to hlubočepy.</div>
+
+
+
 		<script >
 
 			//debugger;
@@ -64,17 +74,59 @@
             const L=5;
             const KL=15;
 
-            const M=`Holešovice`.length; // 10
+            const M=`Vršovice`.length; // 8
             const N=`Radotín`.length; // 7
             const P=`Kyje`.length; // 4
             const Q=`Stodůlky`.length; //8
 
+			const debug=[];
+            debug["A"] = A;
+            debug["B"] = B;
+			debug["AB"] = AB;
+            debug["C"] = C;
+			debug["D"] = D;
+			debug["CD"] = CD;
+			debug["E"] = E;
+			debug["F"] = F;
+			debug["EF"] = EF;
+			debug["G"] = G;
+			debug["H"] = H;
+			debug["GH"] = GH;
+			debug["I"] = I;
+			debug["J"] = J;
+			debug["IJ"] = IJ;
+			debug["K"] = K;
+			debug["L"] = L;
+			debug["KL"] = KL;
+			debug["M"] = M;
+			debug["N"] = N;
+			debug["P"] = P;
+			debug["Q"] = Q;
+
+            /*
+                "A" => A,
+				"B" => B,
+				"AB" => AB,
+				"C" => C,
+				"D" => D,
+				"CD" => CD,
+				"E" => E,
+				"F" => F,
+
+			]*/
+			console.debug(debug);
             //debugger
 
             //const soucet = 1;
-
-            const sirka = `N50°02.${AB+GH+IJ+KL+H-N}${Q-P}'`;//+ (AB+GH+IJ+KL+H-N)(Q-P);
-            const delka = `E14°23.${[10*(CD+EF+P)+(11*M)+(P/2)]}'`;//+[10*(CD+EF+P)+(11*M)+(P/2)];
+/*
+    	N 50°02.(AB+GH+IJ+KL+H-N)(Q-P)'
+        E 014°23.[10*(CD+EF+P)+(11*M)+(P/2)]'*
+* */
+            const sirka = `N 50°02.${AB+GH+IJ+KL+H-N}${Q-P}'`;//+ (AB+GH+IJ+KL+H-N)(Q-P);
+            const delka = `E 14°23.${[10*(CD+EF+P)+(11*M)+(P/2)]}'`;//+[10*(CD+EF+P)+(11*M)+(P/2)];
+			document.getElementById('sirka').innerHTML = sirka;
+			document.getElementById('delka').innerHTML = delka;
+            document.getElementById('check').innerHTML = `${sirka} ${delka}`;
             console.log('sirka '+sirka);
             console.log('delka '+delka);
             console.log(`${sirka} ${delka}`);
@@ -84,6 +136,7 @@
 
             console.log(`soucet A..Q ${soucetAQ}`);
             console.log(`soucet A..P ${soucetAP}`);
+            console.log(`soucet AB..P ${soucet2}`);
 
 			const cs = MyLibrary.cifSoucet(A+B+C+D+E+F+G+H+I+J+K+L+M+N+P+Q);
             console.log(`cifSoucet ${cs}`);

@@ -1,4 +1,4 @@
-import {cislo,ciferace,cifSoucet} from "../ts/funkce";
+import {cislo,ciferace,cifSoucet} from "./funkce";
 
 console.log('Ciferace');
 console.log(ciferace(123456));

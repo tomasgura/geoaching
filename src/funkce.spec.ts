@@ -1,4 +1,4 @@
-
+import {describe, expect, test} from '@jest/globals';
 import {cislo, ciferace, cifSoucet} from './funkce'
 //console.log(funkce);
 

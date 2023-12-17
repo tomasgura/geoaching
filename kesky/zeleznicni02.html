@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="bundle-webpack.js"></script>
+	</head>
+	<body>
+		<h1>
+			Zeleznicni #2: NEJ v CR Mystery Cache
+
+			GCZ63D
+
+		</h1>
+
+		<a href="https://www.geocaching.com/geocache/GCZ63D" target="_blank">Link</a><br>
+
+		<div id="sirka"></div>
+		<div id="delka"></div>
+		<div id="check"></div>
+		<div id="hint"> Hint: </div>
+		<div id="cil"> Cil  </div>
+		<a href="https://mapy.cz/zakladni?q=E%20014%C2%B027.770%27%20N%2050%C2%B005.485%27%20E%20014%C2%B027.770%27&x=14.4139000&y=50.0532000&z=11" target="_blank">mapa</a>
+		<div>vítkov třeba na konci Pernerovy ulice se dá jít nahoru a nebo z druhé strany  bus Černínova nebo z Ohrady</div>
+		<script type="text/javascript">
+            // 1350 m
+            const A=1;
+            const B=3;
+            const AB=A*10+B;
+
+			//1747 m  1750m
+			const C=1;
+            const D=7;
+			const CD=C*10+D;
+
+            const E=7; // na sumave
+
+			const F=3; // prelozka kvuli uhli
+
+			// 1000 m zaokrouhlene
+			const G=1;
+			const H=0;
+			const GH=G*10+H;
+
+			const I=2; // šumava volary
+
+			const J=6; // 921 m
+
+			const K=4; // negreliho viadukt
+
+			const L=1; //most nad hladinout orliku
+
+			const M=9; // konka Budejovice Linz
+
+			/*
+				N 50°05.[30*AB+10*M+E+F-J+L]'
+				E 014°27.[30*CD+20*GH+10*(I+K)]'
+			* */
+
+            const sirka = `N 50°05.${30*AB+10*M+E+F-J+L}'`;//+ (AB+GH+IJ+KL+H-N)(Q-P);
+            const delka = `E 014°27.${30*CD+20*GH+10*(I+K)}'`;//+[10*(CD+EF+P)+(11*M)+(P/2)];
+            document.getElementById('sirka').innerHTML = sirka;
+            document.getElementById('delka').innerHTML = delka;
+            const x = MyLibrary.cifSoucet(MyLibrary.numberFromString(`${sirka}${delka}`))
+            document.getElementById('check').innerHTML = `${sirka} ${delka} - ${x}`;
+
+
+
+		</script>
+	</body>
+</html>

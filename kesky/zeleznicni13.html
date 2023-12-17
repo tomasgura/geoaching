@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Zeleznicni #13: zajimavosti Slovenska Mystery Cache GC161QY</title>
+		<script src="bundle-webpack.js"></script>
+	</head>
+	<body>
+		<h1>
+			Zeleznicni #1: vlaky v PID Mystery Cache GCZ63C
+		</h1>
+
+		<a href="https://www.geocaching.com/geocache/GC161QY_zeleznicni-13-zajimavosti-slovenska" target="_blank">Link</a><br>
+
+		Praha Masarykovo nadr.-Praha Klanovice (trat dale smer C.Brod, Kolin), delka useku AB km<br>
+		Praha hl.n.-Praha-Cakovice (trat dale smer Vsetaty, Turnov), delka useku CD km<br>
+		Praha-Holesovice-Praha-Sedlec (trat dale smer Kralupy n./Vlt., Decin)<br>
+		Praha Masarykovo nadr.-Praha-Ruzyne (trat dale smer Kladno, Chomutov)<br>
+		Praha-Smichov sev.n.-Praha-Zlicin ("Prazsky Semmering", trat dale smer Hostivice, Rudna u Prahy), delka useku EF km<br>
+		Praha hl.n.-Praha-Radotin (trat dale smer Beroun, Plzen), delka useku GH km<br>
+		Praha hl.n.-Praha-Reporyje (trat dale smer Rudna u Prahy, Beroun)<br>
+		Praha hl.n.-Praha-Zbraslav (trat dale smer Cercany-"Posazavsky pacifik"), delka useku IJ km<br>
+		Praha hl.n-Praha-Kolovraty (trat dale smer Benesov, C.Budejovice)<br>
+		Praha Masarykovo nadr.-Praha-Horni Pocernice (trat dale smer Nymburk, Kolin), delka useku KL km<br>
+
+		<p>
+			AB - 18 km
+			CD - 19 km
+			EF - 15 km
+			GH - 13km
+			IJ - 18km
+			KL - 15km
+			M-'Praha-Holešovice'
+			N='Praha-Radotín'
+			P=Praha-Kyje
+			Q=Praha-Stodůlky
+		</p>
+
+		<div id="sirka"></div>
+		<div id="delka"></div>
+		<div id="check"></div>
+		<div> Hint: metr a pul pod cestou, koreny brizy, pod kameny, travou, listim </div>
+		<div> Cil N 50°02.604' E 14°23.470' </div>
+		<a href="https://mapy.cz/zakladni?q=N%2050%C2%B002.604%27%20E%2014%C2%B023.470%27&source=coor&id=14.391166666666667%2C50.0434&ds=1&x=14.3915261&y=50.0431123&z=18" target="_blank">mapa</a>
+		<div>Jsou to hlubočepy.</div>
+
+
+
+		<script >
+
+			//debugger;
+
+            const A = 1;
+			const B= 8;
+			const AB = 18;
+
+            const C = 1;
+			const D = 9;
+            const CD = 19;
+
+            const E=1;
+            const F=5;
+            const EF=15;
+
+            const G=1;
+            const H=3;
+            const GH=13;
+
+            const I=1;
+            const J=8;
+            const IJ=18;
+
+            const K=1;
+            const L=5;
+            const KL=15;
+
+            const M=`Vršovice`.length; // 8
+            const N=`Radotín`.length; // 7
+            const P=`Kyje`.length; // 4
+            const Q=`Stodůlky`.length; //8
+
+			const debug=[];
+            debug["A"] = A;
+            debug["B"] = B;
+			debug["AB"] = AB;
+            debug["C"] = C;
+			debug["D"] = D;
+			debug["CD"] = CD;
+			debug["E"] = E;
+			debug["F"] = F;
+			debug["EF"] = EF;
+			debug["G"] = G;
+			debug["H"] = H;
+			debug["GH"] = GH;
+			debug["I"] = I;
+			debug["J"] = J;
+			debug["IJ"] = IJ;
+			debug["K"] = K;
+			debug["L"] = L;
+			debug["KL"] = KL;
+			debug["M"] = M;
+			debug["N"] = N;
+			debug["P"] = P;
+			debug["Q"] = Q;
+
+            /*
+                "A" => A,
+				"B" => B,
+				"AB" => AB,
+				"C" => C,
+				"D" => D,
+				"CD" => CD,
+				"E" => E,
+				"F" => F,
+
+			]*/
+			console.debug(debug);
+            //debugger
+
+            //const soucet = 1;
+/*
+    	N 50°02.(AB+GH+IJ+KL+H-N)(Q-P)'
+        E 014°23.[10*(CD+EF+P)+(11*M)+(P/2)]'*
+* */
+            const sirka = `N 50°02.${AB+GH+IJ+KL+H-N}${Q-P}'`;//+ (AB+GH+IJ+KL+H-N)(Q-P);
+            const delka = `E 14°23.${[10*(CD+EF+P)+(11*M)+(P/2)]}'`;//+[10*(CD+EF+P)+(11*M)+(P/2)];
+			document.getElementById('sirka').innerHTML = sirka;
+			document.getElementById('delka').innerHTML = delka;
+            document.getElementById('check').innerHTML = `${sirka} ${delka}`;
+            console.log('sirka '+sirka);
+            console.log('delka '+delka);
+            console.log(`${sirka} ${delka}`);
+            const soucetAQ = A+B+C+D+E+F+G+H+I+J+K+L+M+N+P+Q;
+            const soucetAP = A+B+C+D+E+F+G+H+I+J+K+L+M+N+P;
+            const soucet2 = AB+CD+EF+GH+IJ+KL+M+N+P;
+
+            console.log(`soucet A..Q ${soucetAQ}`);
+            console.log(`soucet A..P ${soucetAP}`);
+            console.log(`soucet AB..P ${soucet2}`);
+
+			const cs = MyLibrary.cifSoucet(A+B+C+D+E+F+G+H+I+J+K+L+M+N+P+Q);
+            console.log(`cifSoucet ${cs}`);
+			//debugger
+
+
+
+		</script>
+	</body>
+</html>

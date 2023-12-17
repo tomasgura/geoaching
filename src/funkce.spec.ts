@@ -1,5 +1,5 @@
 import {describe, expect, test} from '@jest/globals';
-import {cislo, ciferace, cifSoucet} from './funkce'
+import {cislo, ciferace, cifSoucet, numberFromString} from './funkce'
 //console.log(funkce);
 
 test ('cifirace ', ()=>{
@@ -39,3 +39,11 @@ test ('Ciferny soucet', () => {
 	expect(cifSoucet(11)).toBe(2);
 	expect(cifSoucet(111)).toBe(3);
 });
+
+test('Number from string', () => {
+	expect(numberFromString('123')).toBe(123);
+	expect(numberFromString('123a')).toBe(123);
+	expect(numberFromString('a123')).toBe(123);
+	expect(numberFromString('a123a')).toBe(123);
+	expect(numberFromString('N 50°05.485')).toBe(5005485);
+})

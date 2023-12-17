@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="bundle-webpack.js"></script>
+	</head>
+	<body>
+		<h1>
+
+			Zeleznicni #3: trate v CR Mystery Cache
+
+			GCZFEA
+		</h1>
+
+		<a href="https://www.geocaching.com/geocache/GCZFEA" target="_blank">Link</a><br>
+
+		<div id="sirka"></div>
+		<div id="delka"></div>
+		<div id="check"></div>
+		<div id="hint"> Hint: </div>
+		<div id="cil"> Cil  </div>
+		<a href="" target="_blank">mapa</a>
+
+
+
+		<script type="text/javascript">
+
+			const A=210;
+            const B=10;
+            const C=149;
+            const D=135;
+            const E=198;
+			const F=223;
+			const G=64;
+			const H=279;
+			const I=295;
+			const J=18;
+			const K=251;
+			const L=36;
+			const M=32;
+			const N=261;
+            const O=177;
+
+			const P=292;
+			const Q=24;
+            const R=331;
+            const S=114;
+            const T=148;
+            const U=248;
+            const V=14;
+            const W=238;
+
+
+            const Z=4; // zluta a hneda
+            const X=A+B+C+D+E+F+G+H+J+Q-O-R+5;
+            const Y=(U-W)+(N-K)+(T-S)+(I-P)+J+L+M+Q+R+V-1;
+
+            const cifX=MyLibrary.cifSoucet(X);
+            const cifY=MyLibrary.cifSoucet(Y);
+            console.debug(`cifSoucet X ${cifX}`); // sedi
+			console.debug(`cifSoucet Y ${cifY}`); // sedi
+
+			console.debug(` X ${X}`); // sedi
+			console.debug(` Y ${Y}`); // sedi
+
+            const sirka = `N 50°01.${[X-(15*Z)]}'`;
+			const delka=`E 014°24.${[Y+(2*Z)]}'`;
+
+			document.getElementById('sirka').innerHTML = sirka;
+			document.getElementById('delka').innerHTML = delka;
+			document.getElementById('check').innerHTML = `${sirka} ${delka}`;
+			document.getElementById('hint').innerHTML = `hint: ulice Údolní v Bráníku hint: visi cca metr padesat nad zemi`;
+
+
+
+		</script>
+	</body>
+</html>

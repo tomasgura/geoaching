@@ -2,26 +2,84 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>
+			Zeleznicni #6: koridory Mystery Cache
+
+			GCZRTK</title>
 		<script src="bundle-webpack.js"></script>
 	</head>
 	<body>
 		<h1>
+			Zeleznicni #6: koridory Mystery Cache
 
+			GCZRTK
 		</h1>
 
-		<a href="" target="_blank">Link</a><br>
+		<a href="https://www.geocaching.com/geocache/GCZRTK_zeleznicni-6-koridory" target="_blank">Link</a><br>
 
 		<div id="sirka"></div>
 		<div id="delka"></div>
 		<div id="check"></div>
 		<div id="hint"> Hint: </div>
-		<div id="cil"> Cil N 50°02.604' E 14°23.470' </div>
-		<a href="" target="_blank">mapa</a>
+		<div id="cil"> Cil  </div>
+		<div>cil natvrdo N 50°05.389' E 014°27.051' </div>
+		<a href="" id="mapaUrl" target="_blank">mapa</a>
+		<p> bud z tachovskeho namesni nebo od Florence</p>
 
 
+		<script type="text/javascript" >
+            const A=4; // kréta 1994
+            const B=7; // helsinky 1997
+            const C=4; // ctvrty koridor
 
-		<script >
+
+            const D=4; // 450 km  skutecna 458 km D50 km
+            const E=4; // 2004 dokoncen
+            const F=2; // 2012
+            const G=6; // rychlost 160 km/h
+
+
+			const H=2;
+			const I=0; // 200 kilometru skutecne 213 km HI0 km na nasobky 50
+			const J=4; // 2004 dokoncen
+			const HI=H*10+I;
+
+
+            const K=6;
+            const L=5; // 660 km  665 km
+			const KL=K*10+L;
+
+
+            const M=3;
+            const N=5; // 360 km  365 kskutecna delka
+			const MN=M*10+N; // 360 mm
+
+
+            //const O=0;
+			const P=6; // 160 km/h
+			const Q=7; // 70 - 80 km/h
+/*
+			const R=0;
+			const S=0;
+			const T=0;
+			const U=0;
+			const V=0;
+			const W=0;
+            const X=0;
+			const Y=0;
+			const Z=0;
+*/
+            const sirka = `N 50°05.${[3*(KL+MN)+(10*B)+(2*A)+C+F+G+P-Q]}'`;
+            const delka = `E 014°2${Q}.0${[3*(D+E+F)+HI+(4*J)-A-B-C ]}'`;
+            const x = MyLibrary.cifSoucet(MyLibrary.numberFromString(`${sirka}${delka}`))
+			console.log(`sirka: ${sirka}  delka: ${delka} - ciferny soucent ma být 50 je ${x}`);
+            document.getElementById('sirka').innerHTML = sirka;
+            document.getElementById('delka').innerHTML = delka;
+            document.getElementById('check').innerHTML = `${sirka} ${delka}`;
+			document.getElementById('cil').innerHTML = `Cil ${sirka} ${delka}`;
+            //https://mapy.cz/zakladni?q=N%2050%C2%B005.395%27%20E%20014%C2%B027.052%27&source=coor&id=14.450866666666666%2C50.08991666666667&ds=1&x=14.4424660&y=50.0895105&z=17
+            const mapaUrl=`https://mapy.cz/zakladni?q=${sirka} ${delka}&source=coor&id=14.450866666666666%2C50.08991666666667&ds=1&z=17`;
+            document.getElementById('mapaUrl').href = mapaUrl;
 		</script>
 	</body>
 </html>

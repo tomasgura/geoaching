@@ -1,4 +1,3 @@
-import {parse} from "ts-jest";
 
 export function ciferace(a:number):number {
 		let celkem = [...a.toString()].reduce( (suma,cislo) => {
@@ -24,19 +23,13 @@ export function cifSoucet(a:number):number {
 }
 
 export function numberFromString(s:string):number {
-	//console.log(s);
-	//console.log([...s]);
 	return [...s].reduce((prev:number, value) => {
-		//console.log(prev);
-		//console.log(value);
-		const cislo = parseInt(value) ??  0;
-		//console.log(`prev ${prev} value ${value} cislo	${cislo} `);
+		const cislo = parseInt(value) ?? 0;
 		if (isNaN(cislo)) {
 			return prev;
 		}
 
-		return prev * 10 + cislo;//( cislo == NaN ? 0 : cislo);
+		return prev * 10 + cislo;
 	},0);
-	//return parseInt(s);
 }
 

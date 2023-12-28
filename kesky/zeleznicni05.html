@@ -2,26 +2,101 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>
+
+			Zeleznicni #5: uzkokolejky Mystery Cache
+
+			GCZRTJ
+		</title>
 		<script src="bundle-webpack.js"></script>
 	</head>
 	<body>
 		<h1>
+			Zeleznicni #5: uzkokolejky Mystery Cache
+
+			GCZRTJ
 
 		</h1>
 
-		<a href="" target="_blank">Link</a><br>
+		<a href="https://www.geocaching.com/geocache/GCZRTJ" target="_blank">Link</a><br>
 
 		<div id="sirka"></div>
 		<div id="delka"></div>
 		<div id="check"></div>
 		<div id="hint"> Hint: </div>
-		<div id="cil"> Cil N 50°02.604' E 14°23.470' </div>
+		<div> Cil: <span id="cil"></span> </div>
 		<a href="" target="_blank">mapa</a>
 
 
 
-		<script >
+		<script type="text/javascript">
+            const A=1;
+            const B=4;
+            const C=3;
+            const D=5;
+            const ABCD=A*1000+B*100+C*10+D; // 1435;
+
+            const E=6;
+            const F=0;
+            const EF=E*10+F;
+            const EFF=E*100+F; // 600
+
+            const G=7;
+            const H=3;
+			const GH=G*10+H; // 73 - 673 metru
+
+            const K=2;
+            const L=0;
+            const KL=K*10+L; // 20
+            // 20 km trmesna osoblaha
+
+            const M=7;
+            const N=6;
+			const MN=M*10+N; // 76
+            const MNF = M*100+N*10+F;
+            // 760 mm
+
+            const O= "Veksl".length;
+
+
+            for (let I = 0; I < 3; I++) {
+                for (let J = 0; J < 10; J++) {
+                    const IJ=I*10+J; // 0
+                    const P = (IJ/2)+(10*KL)+EF+GH;
+                    const Q = (ABCD)/5+(6*EF)+GH+MN+(27*O)+E+K;
+
+                    const cifP = MyLibrary.cifSoucet(P);
+                    const cifQ = MyLibrary.cifSoucet(Q);
+                    const kontrolaP = cifP===12;
+                    const kontrolaQ = cifQ===21;
+                    if (kontrolaP && kontrolaQ) {
+                        console.log(`Ciferny soucet P = ${cifP} kontrola ${cifP===12}`);
+                        console.log(`Ciferny soucet Q = ${cifQ} kontrola ${cifQ===21}`);
+                        console.log(`I = ${I} J = ${J} IJ = ${IJ}`);
+                        console.log(`P = ${P}`);
+						console.log(`Q = ${Q}`);
+
+                    }
+
+                }
+            }
+            //const I=0;
+            //const J=0;
+            // zatim se nepodarilo zjistit chyba webu
+
+
+
+/*
+			const P=0;
+			const Q=0;
+			const R=0;
+			const S=0;
+			const T=0;
+			const U=0;
+			const V=0;
+			const W=0;
+*/
+
 		</script>
 	</body>
 </html>
